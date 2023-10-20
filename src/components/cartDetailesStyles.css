@@ -1,0 +1,42 @@
+.cartHide{
+    display: none;
+}
+
+.cartShow{
+    position: fixed;
+    inset: 90px 30% 0px 70%;
+    padding: 10px 30px;
+    width: 300px;
+    border-radius: 20px;
+    height: 200px;
+    box-shadow: 10px 10px 20px ;
+    background-color: white;
+}
+
+.cartShow p:first-child{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 20px;
+    text-align: left;
+}
+.cartShow .details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cartShow .details img:first-child{
+    width: 40px;
+}
+
+.cartShow button{
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    background-color: hsl(26, 100%, 55%);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 1rem;
+    margin: 1rem 0rem;
+    font-weight: 600;
+}
