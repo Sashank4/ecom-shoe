@@ -307,6 +307,10 @@ img{
     display: none;
   }
 
+  .hero{
+    width: 85%;
+  }
+
   .right{
     padding: 0rem;
     width: 100%;
