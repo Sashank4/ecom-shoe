@@ -11,7 +11,7 @@ const Navbar = (props) => {
   return (
     <header className='p-10'>
         <button className='menuIcon ' onClick={()=> setclicked(!clicked)} >{clicked?<img src={close} alt='close'/>:<img src={menu} alt='menu'/>}</button>
-        <img src={logo} alt='logo'/>
+        <img className='logo' src={logo} alt='logo'/>
         <ul className={clicked ? "active" :'inactive'}>
           <li>Collections </li>
           <li>Men</li>

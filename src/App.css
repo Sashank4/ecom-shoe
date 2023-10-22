@@ -247,15 +247,15 @@ img{
   }
 
   header{
-    width: 100%;
+    width: 80%;
    
   }
-  header>img{
-    padding: 0rem 6rem 0rem 0rem;
+  header .logo{
+    padding: 0rem 2rem 0rem 0rem;
   }
 
   header button:last-child img{
-    height: 30px;
+    height: 25px;
   }
   
 
@@ -287,7 +287,7 @@ img{
     inset: 0px;
     height: 100%;
     width:70%;
-    left: -300px;
+    left: -320px;
     padding-top: 100px;
     z-index: 1000;
     color: hsl(219, 9%, 45%);
@@ -301,6 +301,58 @@ img{
     font-weight: 700;
     font-size: 24px;
     color: hsl(220, 13%, 13%);
+  }
+
+  .hero .left{
+    display: none;
+  }
+
+  .right{
+    padding: 0rem;
+    width: 100%;
+    margin: 0rem;
+  }
+
+  .counter{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+  }
+
+  .right .counter .counterItem{
+    width: 100%;
+  }
+
+  .right .counter button {
+    width: 100%;
+    margin: 15px;
+  }
+
+  .closeCarousel{
+    display: block;
+  }
+
+  .closeCarousel img{
+    width: 100%;
+  }
+  .closeCarousel>button{
+    display: none;
+  }
+  .closeCarousel  .buttons button{
+    position: relative;
+    border: none;
+    background-color: white;
+    border-radius: 50%;
+    top:-250px
+  }
+  .closeCarousel  .buttons button:first-child{
+    margin-right: 250px;
+  }
+  .closeCarousel .buttons img{
+    height: 15px;
+    width: 15px;
+    padding: 15px;
+    border-radius: 50%;
   }
   
 }

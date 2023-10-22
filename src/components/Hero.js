@@ -42,6 +42,14 @@ const Hero = ({sendcartValue}) => {
 
   return (
     <>
+    <div className={openCarousel?'openCarousel':'closeCarousel'}>
+        <button onClick={()=>setOpenCarousel(false)}><img src={close} alt='close'/></button>
+        <img src={mainImage} alt='mainImage' />
+        <div className='buttons'>
+            <button onClick={()=>previousSlide()}> <img src={previous} alt='previous'/></button>
+            <button onClick={()=>nextSlide()}><img src={next} alt='next'/></button>
+        </div>
+    </div>
     <div className='hero'>
     <div className='left'>
         <img onClick={()=>setOpenCarousel(true)} className='mainImage'
@@ -86,14 +94,7 @@ const Hero = ({sendcartValue}) => {
 
    
     </div>
-    <div className={openCarousel?'openCarousel':'closeCarousel'}>
-        <button onClick={()=>setOpenCarousel(false)}><img src={close} alt='close'/></button>
-        <img src={mainImage} alt='mainImage' />
-        <div className='buttons'>
-            <button onClick={()=>previousSlide()}> <img src={previous} alt='previous'/></button>
-            <button onClick={()=>nextSlide()}><img src={next} alt='next'/></button>
-        </div>
-    </div>
+    
 </>
   )
 }
