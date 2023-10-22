@@ -3,26 +3,51 @@ import data from "../components/data.js"
 import plus from '../images/icon-plus.svg'
 import minus from '../images/icon-minus.svg'
 import cart from '../images/icon-cart.svg'
+import next from '../images/icon-next.svg'
+import previous from '../images/icon-previous.svg'
+import close from '../images/icon-close.svg'
 
-const Hero = () => {
+
+
+
+const Hero = ({sendcartValue}) => {
     const [products] = useState(data)
     const [value, setvalue] = useState(0)
     const {mainImage} = products[value]
     const [count, setcount] = useState(0)
-    const [cartValue, setcartValue] = useState(0)
-
+    const [openCarousel,setOpenCarousel] = useState(false)
+   
     const handleCartClick = () =>{
-         setcartValue(125*count) 
-           
+         sendcartValue(count)
     } 
 
+    const nextSlide = () =>{
+        if(value === products.length -1){
+            setvalue(0)
+        }
+        else{
+            setvalue(value+1)
+        }
+    }
+
+    const previousSlide = () =>{
+        if(value === 0){
+            setvalue(products.length-1)
+        }
+        else{
+            setvalue(value-1)
+        }
+    }
+
+
   return (
+    <>
     <div className='hero'>
     <div className='left'>
-        <img className='mainImage'
+        <img onClick={()=>setOpenCarousel(true)} className='mainImage'
         src={mainImage} alt='mainImage'/>
       
-        <ul >
+        <ul  >
             {products.map((item,index) => (
                 <li 
                     key={item.id}
@@ -37,6 +62,7 @@ const Hero = () => {
         </ul>
     </div>
 
+    
     <div className='right'>
         <p className='sellerName'>SNEAKER COMPANY</p>
         <h1 className='productName'>Fall Limited Edition Sneakers</h1>
@@ -55,9 +81,20 @@ const Hero = () => {
             </div>
             <button onClick={()=>handleCartClick()}><img src={cart} alt='cart'/><span>Add to cart</span></button>
         </div>
-        
+       
     </div>
+
+   
     </div>
+    <div className={openCarousel?'openCarousel':'closeCarousel'}>
+        <button onClick={()=>setOpenCarousel(false)}><img src={close} alt='close'/></button>
+        <img src={mainImage} alt='mainImage' />
+        <div className='buttons'>
+            <button onClick={()=>previousSlide()}> <img src={previous} alt='previous'/></button>
+            <button onClick={()=>nextSlide()}><img src={next} alt='next'/></button>
+        </div>
+    </div>
+</>
   )
 }
 

@@ -18,6 +18,11 @@
     font-weight: 600;
     padding: 20px;
     text-align: left;
+    color: hsl(219, 9%, 45%);
+}
+
+.cartShow .emptyText{
+    align-items: center;
 }
 .cartShow .details{
     display: flex;
@@ -26,6 +31,7 @@
 }
 .cartShow .details img:first-child{
     width: 40px;
+    border-radius: 5px;
 }
 
 .cartShow button{
@@ -38,5 +44,13 @@
     font-size: 14px;
     padding: 1rem;
     margin: 1rem 0rem;
+    font-weight: 600;
+}
+.cartShow p{
+    color: hsl(220, 14%, 75%);
+    font-size: 14px;
+}
+p span{
+    color: black;
     font-weight: 600;
 }

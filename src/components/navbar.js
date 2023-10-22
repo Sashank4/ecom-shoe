@@ -5,12 +5,12 @@ import logo from '../images/logo.svg'
 import menu from '../images/icon-menu.svg'
 import close from '../images/icon-close.svg'
 import CartDetails from './cartDetails.js'
-const Navbar = () => {
+const Navbar = (props) => {
   const [clicked, setclicked] = useState(false);
   const [cartclicked, setcartclicked] = useState(false)
   return (
-    <header>
-        <button className='menuIcon' onClick={()=> setclicked(!clicked)} >{clicked?<img src={close} alt='close'/>:<img src={menu} alt='menu'/>}</button>
+    <header className='p-10'>
+        <button className='menuIcon ' onClick={()=> setclicked(!clicked)} >{clicked?<img src={close} alt='close'/>:<img src={menu} alt='menu'/>}</button>
         <img src={logo} alt='logo'/>
         <ul className={clicked ? "active" :'inactive'}>
           <li>Collections </li>
@@ -21,7 +21,7 @@ const Navbar = () => {
         </ul>
         <button onClick={()=>setcartclicked(!cartclicked)}><img src={cart} alt='cart'/><p></p></button>
         <img className='avatar' src={avatar} alt='avatar'/>
-        <CartDetails cartShow={cartclicked}/>
+        <CartDetails cartValue={props.cartValue} cartShow={cartclicked}/>
       </header>
   )
 }
